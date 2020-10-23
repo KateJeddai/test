@@ -16,8 +16,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); 
 
 const distDir = __dirname + "/dist/";
+app.get('/en', (req, res) => {
+    console.log(__dirname)
+    res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'en', 'index.html'));
+}, (err) => {
+    console.log(err)
+})
 app.use(express.static(distDir));
-app.get('*', (req, res) => {
+app.get('/de', (req, res) => {
     console.log(__dirname)
     res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'de', 'index.html'));
 }, (err) => {
