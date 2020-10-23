@@ -1,0 +1,14 @@
+<table>
+    <thead>
+        <th (click)="sort('name')">Name</th>
+        <th (click)="sort('type')">Type of Animal</th>
+        <th (click)="sort('age')">Age</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let friend of friends">            
+            <td>{{friend.name}}</td>
+            <td>{{friend.type}}</td>
+            <td>{{friend.age}}</td>
+        </tr>
+    </tbody>
+</table>

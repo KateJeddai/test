@@ -1,0 +1,25 @@
+form {
+    width: 750px;
+    margin: 4rem auto;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.btn-wrapper {
+    width: 150px;
+    margin: 0 auto;
+}
+.p-button {
+    margin: auto;
+    width: 150px;
+}
+.phone-wrapper {
+    display: flex;
+    width: 100%;
+}
+p-inputMask {
+    width: 100%;
+}
+.p-field-radiobutton, .p-field-checkbox {
+    color: #6c757d;
+}
+

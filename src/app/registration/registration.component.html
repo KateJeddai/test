@@ -1,0 +1,151 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="p-p-4">
+    <div class="p-fluid p-formgrid p-grid">           
+        <div class="p-inputgroup p-col p-mb-5">
+            <span class="p-float-label">
+                <input type="text" 
+                       pInputText 
+                       formControlName="firstName" 
+                       required>   
+                <label for="inputtext" i18n>First Name</label>
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            </span>          
+        </div>
+        <div class="p-inputgroup p-col p-mb-5">
+            <span class="p-float-label">
+                <input type="text" 
+                       pInputText 
+                       formControlName="lastName" 
+                       required>   
+                <label for="inputtext" i18n>Last Name</label>
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            </span>          
+        </div>
+    </div>
+    <div class="p-fluid p-formgrid p-grid">           
+        <div class="p-inputgroup p-col p-mb-5">
+            <span class="p-float-label">
+                <input type="email" 
+                       pInputText 
+                       formControlName="email" 
+                       required>   
+                <label for="inputtext" i18n>Email</label>
+                <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+            </span>          
+        </div>
+        <div class="p-inputgroup p-col p-mb-5">
+            <span class="p-float-label">
+                <input type="password" 
+                       pInputText 
+                       formControlName="password" 
+                       required>   
+                <label for="inputtext" i18n>Password</label>
+                <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+            </span>          
+        </div>
+    </div>
+    
+     <div class="p-fluid p-formgrid p-grid"  formGroupName="contacts">
+        <div class="p-col-5">
+            <div class="p-inputgroup p-mb-5">
+                <span class="p-float-label">
+                    <input type="text" 
+                            pInputText 
+                            formControlName="city" 
+                            required>   
+                    <label for="inputtext" i18n>City</label>
+                </span>          
+            </div>
+        </div>       
+        <div class="p-col-5">
+            <div class="p-inputgroup p-mb-5">
+                <span class="p-float-label">
+                    <input type="text" 
+                           pInputText 
+                           formControlName="state" 
+                           required>   
+                    <label for="inputtext" i18n>State</label>
+                </span>          
+            </div>
+        </div>
+        <div class="p-col-2">
+            <div class="p-inputgroup p-mb-5">
+                <span class="p-float-label">
+                    <input type="text" 
+                            pInputText 
+                            formControlName="zip" 
+                            required>   
+                    <label for="inputtext" i18n>Zip</label>
+                </span>          
+            </div>
+        </div>
+        <div class="p-col-6">
+            <div class="p-inputgroup p-mb-5">
+                <span class="p-float-label">
+                    <input type="text" 
+                            pInputText 
+                            formControlName="address" 
+                            required>   
+                    <label for="inputtext" i18n>Address</label>
+                    <span class="p-inputgroup-addon"><i class="pi pi-home"></i></span>
+                </span>          
+            </div>
+        </div>
+        <div class="p-col-6">
+            <div class="p-mb-5 phone-wrapper">                
+                <p-inputMask mask="(999) 999-99-99"
+                             formControlName="phone"  
+                             placeholder="(999) 999-99-99"
+                             required i18n></p-inputMask>  
+                <span class="p-inputgroup-addon"><i class="pi pi-mobile"></i></span>   
+            </div>
+        </div>
+    </div>
+    
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-col p-mb-5">
+            <div class="p-inputgroup">
+                <span class="p-float-label">
+                    <p-calendar inputId="calendar" 
+                                formControlName="birthDate" 
+                                dateFormat="dd.mm.yy"
+                                [yearNavigator]="true"
+                                yearRange="1920:2020"
+                                required
+                                [ngStyle]="calendarStyles" i18n></p-calendar>
+                    <label for="calendar" i18n>Birth Date</label>
+                    <span class="p-inputgroup-addon"><i class="pi pi-calendar"></i></span>
+                </span>          
+            </div> 
+        </div>
+    </div>
+    <div class="p-fluid p-formgrid p-grid">
+        <div class="p-col-6 p-mb-5">
+            <div class="p-field-radiobutton">
+                <p-radioButton name="gender" value="female" inputId="female" formControlName="gender"  (onClick)="setGenderValue('female')"></p-radioButton>
+                <label for="female" i18n>female</label>
+            </div>
+            <div class="p-field-radiobutton">
+                <p-radioButton name="gender" value="male" inputId="male" formControlName="gender" (onClick)="setGenderValue('male')"></p-radioButton>
+                <label for="male" i18n>male</label>
+            </div>
+            <div class="p-field-radiobutton">
+                <p-radioButton name="gender" value="other" inputId="other" formControlName="gender" (onClick)="setGenderValue('other')"></p-radioButton>
+                <label for="other" i18n>other</label>
+            </div>
+        </div> 
+        <div class="p-col-6 p-mb-5">
+            <div class="p-field-checkbox">
+                <p-checkbox inputId="approve" value="agreed" formControlName="agreement" required></p-checkbox>
+                <label for="approve" i18n>I agree to personal data processing</label>
+            </div>
+        </div>
+    </div>
+    <div class="btn-wrapper">
+        <button type="submit" 
+                pButton 
+                label="Submit" 
+                [disabled]="!profileForm.valid" i18n></button>
+    </div>
+</form>
+
+
