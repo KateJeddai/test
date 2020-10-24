@@ -16,27 +16,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); 
 
 const distDir = __dirname + "/dist/";
-app.get('/', (req, res) => {
-    res.redirect('/en');
-}, (err) => {
-    console.log(err)
-})
-app.get('/en', (req, res) => {
-    console.log(__dirname)
-    res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'en', 'index.html'));
-}, (err) => {
-    console.log(err)
-})
-app.use(express.static(distDir));
-app.get('/de', (req, res) => {
+app.use(express.static(distDir))
+app.use('/de',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'de')));
+
+
+app.get('/api/de', (req, res) => {
     console.log(__dirname)
     res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'de', 'index.html'));
 }, (err) => {
     console.log(err)
 })
 
+app.get('*.*', express.static(distDir));
 
 app.listen(port, () => {
     console.log('Server listening...');
 })
-
