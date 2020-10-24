@@ -18,11 +18,19 @@ app.use(express.urlencoded({ extended: false }));
 const distDir = __dirname + "/dist/";
 app.use(express.static(distDir))
 app.use('/de',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'de')));
+app.use('/en',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'en')));
 
 
 app.get('/api/de', (req, res) => {
     console.log(__dirname)
     res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'de', 'index.html'));
+}, (err) => {
+    console.log(err)
+})
+
+app.get('/api/en', (req, res) => {
+    console.log(__dirname)
+    res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'en', 'index.html'));
 }, (err) => {
     console.log(err)
 })
