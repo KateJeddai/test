@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
 
   changeLanguage() {
     const lang = this.languageSelect.value.language;
-    const url = lang === "English" ? "http://localhost:3000/api/en" : "http://localhost:3000/api/de";
+    const url = lang === "English" ? "https://dashboard.heroku.com/apps/stormy-thicket-55977/api/en" : "https://dashboard.heroku.com/apps/stormy-thicket-55977/api/de";
     this.document.location.href = url;
   }
 }
