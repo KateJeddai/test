@@ -36,7 +36,7 @@ app.get('/api/en', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'en', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'de', 'index.html'));
 })
 
 //app.get('*.*', express.static(distDir));
