@@ -39,8 +39,8 @@ app.get('/api/en', (req, res) => {
 if(process.env.NODE_ENV === 'production') {
     const distDir = __dirname + "/dist/";
     app.use(express.static(distDir));
-   // app.use('/de',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'de')));
-  //  app.use('/en',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'en')));
+    app.use('/api/de',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'de')));
+    app.use('/api/en',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'en')));
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'en', 'index.html'));
     })
