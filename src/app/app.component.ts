@@ -28,6 +28,4 @@ export class AppComponent implements OnInit {
     const url = lang === "English" ? "http://localhost:3000/api/en" : "http://localhost:3000/api/de";
     this.document.location.href = url;
   }
-
-
 }

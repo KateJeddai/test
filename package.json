@@ -11,7 +11,7 @@
     "server": "node app.js",
     "client": "ng serve --proxy-config proxy.conf.json",
     "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
-    "postinstall": "ng build --prod --localize"
+    "postinstall": "ng build --output-path dist --prod --aot --localize"
   },
   "engines": {
     "node": "12.18.3"
