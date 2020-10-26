@@ -36,6 +36,13 @@ app.get('/api/en', (req, res) => {
 })
 
 //app.get('*.*', express.static(distDir));
+if(process.env.NODE_ENV === 'production') {
+    const distDir = __dirname + "/dist/";
+    app.use(express.static(distDir));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'en', 'index.html'));
+    })
+}
 
 app.listen(port, () => {
     console.log('Server listening...');
