@@ -1,4 +1,11 @@
 <!-- <app-friends></app-friends> -->
-<button><a href="http://localhost:3000/api/de">Deutsch</a></button>
+<form [formGroup]="languageSelect">
+    <select formControlName="language" (change)="changeLanguage()">
+        <option *ngFor="let lang of langs" [value]="lang">
+            {{lang}}
+        </option>
+    </select>
+</form>
 <app-registration></app-registration>
 
+  

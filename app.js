@@ -35,7 +35,7 @@ app.get('/api/en', (req, res) => {
     console.log(err)
 })
 
-app.get('*.*', express.static(distDir));
+//app.get('*.*', express.static(distDir));
 
 app.listen(port, () => {
     console.log('Server listening...');
