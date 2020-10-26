@@ -46,7 +46,7 @@ if(process.env.NODE_ENV === 'production') {
     app.use('/de',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'de')));
     app.use('/en',  express.static(path.resolve(__dirname, 'dist', 'ang-app', 'en')));
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'en', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'dist', 'ang-app', 'de', 'index.html'));
     })
 }
 
